@@ -1,0 +1,12 @@
+{
+  "name": "Japan-WebFont-Association",
+  "description": "Website of Japan WebFont Association",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "prettier": "^1.14.3",
+    "wct-browser-legacy": "^1.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Japan-WebFont-Association",
+  "short_name": "Japan-WebFont-Association",
+  "description": "Website of Japan WebFont Association",
+  "start_url": "/",
+  "display": "standalone"
+}
