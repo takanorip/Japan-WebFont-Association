@@ -1,7 +1,7 @@
 {
-  "name": "My App",
-  "short_name": "My App",
-  "description": "My App description",
+  "name": "Japan Web Font Association",
+  "short_name": "JWFA",
+  "description": "Website | Japan Web Font Association",
   "icons": [
     {
       "src": "images/manifest/icon-192x192.png",
