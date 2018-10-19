@@ -47,27 +47,29 @@ class MyApp extends PolymerElement {
         }
 
         app-header {
-          color: #fff;
-          background-color: var(--app-primary-color);
+          --app-header-shadow: {
+            box-shadow: none;
+          };
+          background-color: var(--primary-background-color);
         }
 
-        app-header paper-icon-button {
-          --paper-icon-button-ink-color: white;
+        .menu-list {
+          display: flex;
+          justify-content: center;
+          width: 100%;
         }
 
-        .drawer-list {
-          margin: 0 20px;
-        }
-
-        .drawer-list a {
+        .menu-list a {
           display: block;
           padding: 0 16px;
           text-decoration: none;
           color: var(--app-secondary-color);
           line-height: 40px;
+          width: 160px;
+          text-align: center;
         }
 
-        .drawer-list a.iron-selected {
+        .menu-list a.iron-selected {
           color: black;
           font-weight: bold;
         }
@@ -81,22 +83,16 @@ class MyApp extends PolymerElement {
 
       <app-drawer-layout fullbleed="" narrow="{{narrow}}">
         <!-- Drawer content -->
-        <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
-          <app-toolbar>Menu</app-toolbar>
-          <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a name="view1" href="[[rootPath]]view1">View One</a>
-            <a name="view2" href="[[rootPath]]view2">View Two</a>
-            <a name="view3" href="[[rootPath]]view3">View Three</a>
-          </iron-selector>
-        </app-drawer>
-
         <!-- Main content -->
         <app-header-layout has-scrolling-region="">
 
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
-              <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
-              <div main-title="">My App</div>
+              <iron-selector selected="[[page]]" attr-for-selected="name" class="menu-list" role="navigation">
+                <a name="view1" href="[[rootPath]]view1">View One</a>
+                <a name="view2" href="[[rootPath]]view2">View Two</a>
+                <a name="view3" href="[[rootPath]]view3">View Three</a>
+              </iron-selector>
             </app-toolbar>
           </app-header>
 
@@ -140,11 +136,6 @@ class MyApp extends PolymerElement {
       this.page = page;
     } else {
       this.page = 'view404';
-    }
-
-    // Close a non-persistent drawer when the page & route are changed.
-    if (!this.$.drawer.persistent) {
-      this.$.drawer.close();
     }
   }
 
