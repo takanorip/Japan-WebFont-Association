@@ -38,6 +38,8 @@ class MyApp extends PolymerElement {
         :host {
           --app-primary-color: #4285f4;
           --app-secondary-color: black;
+          --app-en-font: 'Montserrat', sans-serif;
+          --app-ja-font: 'Noto Sans JP', sans-serif;
 
           display: block;
         }
@@ -53,6 +55,10 @@ class MyApp extends PolymerElement {
           background-color: var(--primary-background-color);
         }
 
+        .memu-bar {
+          height: 72px;
+        }
+
         .menu-list {
           display: flex;
           justify-content: center;
@@ -61,17 +67,31 @@ class MyApp extends PolymerElement {
 
         .menu-list a {
           display: block;
-          padding: 0 16px;
+          margin: 0 16px;
           text-decoration: none;
           color: var(--app-secondary-color);
-          line-height: 40px;
           width: 160px;
           text-align: center;
+          font-family: var(--app-en-font);
+          font-weight: bold;
         }
 
-        .menu-list a.iron-selected {
-          color: black;
-          font-weight: bold;
+        .menu-list a span {
+          display: inline-block;
+          line-height: 48px;
+          position: relative;
+        }
+
+        .menu-list a.iron-selected span::after,
+        .menu-list a:hover span::after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 2px;
+          background-color: #111;
         }
       </style>
 
@@ -87,11 +107,11 @@ class MyApp extends PolymerElement {
         <app-header-layout has-scrolling-region="">
 
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
-            <app-toolbar>
+            <app-toolbar class="memu-bar">
               <iron-selector selected="[[page]]" attr-for-selected="name" class="menu-list" role="navigation">
-                <a name="view1" href="[[rootPath]]view1">View One</a>
-                <a name="view2" href="[[rootPath]]view2">View Two</a>
-                <a name="view3" href="[[rootPath]]view3">View Three</a>
+                <a name="view1" href="[[rootPath]]"><span>TOP</span></a>
+                <a name="view2" href="[[rootPath]]view2"><span>ABOUT</span></a>
+                <a name="view3" href="[[rootPath]]view3"><span>TIPS</span></a>
               </iron-selector>
             </app-toolbar>
           </app-header>

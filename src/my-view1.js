@@ -10,6 +10,7 @@
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './shared-styles.js';
+import './components/common/container.js';
 
 class MyView1 extends PolymerElement {
   static get template() {
@@ -17,17 +18,92 @@ class MyView1 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
+        }
 
-          padding: 10px;
+        .mainVisual {
+          width: 640px;
+          margin: auto;
+          padding: 10vh 0 15vh;
+        }
+
+        h2 {
+          font-size: 6.5rem;
+          text-align: left;
+          margin: 0;
+          font-family: var(--app-en-font);
+          line-height: 1;
+          overflow: hidden;
+        }
+
+        h2:nth-child(n+2) {
+          margin-top: 3rem;
+        }
+
+        h2 span {
+          display: block;
+          overflow: hidden;
+          animation-name: titleAnimation;
+          animation-timing-function: ease-in-out;
+          animation-duration: 0.6s;
+        }
+
+        h2:nth-child(2) span {
+          animation-name: titleAnimation2;
+          animation-duration: 0.66s;
+        }
+
+        h2:nth-child(3) span {
+          animation-name: titleAnimation3;
+          animation-duration: 0.72s;
+        }
+
+        @keyframes titleAnimation {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          100% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        @keyframes titleAnimation2 {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          10% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          110% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        @keyframes titleAnimation3 {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          20% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          120% {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       </style>
 
-      <div class="card">
-        <div class="circle">1</div>
-        <h1>View One</h1>
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-      </div>
+      <common-container>
+        <div class="mainVisual">
+          <h2><span>Japan</span></h2>
+          <h2><span>Web Font</span></h2>
+          <h2><span>Association</span></h2>
+        </div>
+      </common-container>
     `;
   }
 }
