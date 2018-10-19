@@ -18,12 +18,12 @@ class MyView1 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
+          padding: 10vh 0 15vh;
         }
 
         .mainVisual {
           width: 640px;
           margin: auto;
-          padding: 10vh 0 15vh;
         }
 
         h2 {
@@ -44,17 +44,17 @@ class MyView1 extends PolymerElement {
           overflow: hidden;
           animation-name: titleAnimation;
           animation-timing-function: ease-in-out;
-          animation-duration: 0.6s;
+          animation-duration: 0.5s;
         }
 
         h2:nth-child(2) span {
           animation-name: titleAnimation2;
-          animation-duration: 0.66s;
+          animation-duration: 0.55s;
         }
 
         h2:nth-child(3) span {
           animation-name: titleAnimation3;
-          animation-duration: 0.72s;
+          animation-duration: 0.6s;
         }
 
         @keyframes titleAnimation {
