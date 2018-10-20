@@ -26,7 +26,7 @@ class MyView1 extends PolymerElement {
           margin: auto;
         }
 
-        h2 {
+        h1 {
           font-size: 6.5rem;
           text-align: left;
           margin: 0;
@@ -35,53 +35,46 @@ class MyView1 extends PolymerElement {
           overflow: hidden;
         }
 
-        h2:nth-child(n+2) {
+        h1:nth-child(n+2) {
           margin-top: 3rem;
         }
 
-        h2 span {
+        h1 span {
           display: block;
           overflow: hidden;
-          animation-name: titleAnimation;
           animation-timing-function: ease-in-out;
-          animation-duration: 0.5s;
         }
 
-        h2:nth-child(2) span {
-          animation-name: titleAnimation2;
-          animation-duration: 0.55s;
+        @media (max-width: 767px) {
+          .mainVisual {
+            width: auto;
+          }
+
+          h1 {
+            font-size: 15vw;
+          }
+
+          h1:nth-child(n+2) {
+            margin-top: 3rem;
+          }
         }
 
-        h2:nth-child(3) span {
-          animation-name: titleAnimation3;
+        h1:nth-child(1) span {
+          animation-name: titleAnimation;
           animation-duration: 0.6s;
         }
 
+        h1:nth-child(2) span {
+          animation-name: titleAnimation2;
+          animation-duration: 0.65s;
+        }
+
+        h1:nth-child(3) span {
+          animation-name: titleAnimation3;
+          animation-duration: 0.7s;
+        }
+
         @keyframes titleAnimation {
-          0% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        @keyframes titleAnimation2 {
-          0% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          10% {
-            transform: translateY(100%);
-            opacity: 0;
-          }
-          110% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        @keyframes titleAnimation3 {
           0% {
             transform: translateY(100%);
             opacity: 0;
@@ -95,13 +88,41 @@ class MyView1 extends PolymerElement {
             opacity: 1;
           }
         }
+        @keyframes titleAnimation2 {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          30% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          130% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        @keyframes titleAnimation3 {
+          0% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          40% {
+            transform: translateY(100%);
+            opacity: 0;
+          }
+          140% {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
       </style>
 
       <common-container>
         <div class="mainVisual">
-          <h2><span>Japan</span></h2>
-          <h2><span>Web Font</span></h2>
-          <h2><span>Association</span></h2>
+          <h1><span>Japan</span></h1>
+          <h1><span>Web Font</span></h1>
+          <h1><span>Association</span></h1>
         </div>
       </common-container>
     `;

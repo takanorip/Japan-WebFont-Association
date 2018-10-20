@@ -10,18 +10,14 @@
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils/settings.js';
-import '@polymer/app-layout/app-drawer/app-drawer.js';
-import '@polymer/app-layout/app-drawer-layout/app-drawer-layout.js';
 import '@polymer/app-layout/app-header/app-header.js';
-import '@polymer/app-layout/app-header-layout/app-header-layout.js';
 import '@polymer/app-layout/app-scroll-effects/app-scroll-effects.js';
 import '@polymer/app-layout/app-toolbar/app-toolbar.js';
 import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
-import '@polymer/paper-icon-button/paper-icon-button.js';
-import './my-icons.js';
+import './components/common/footer.js'
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -38,25 +34,51 @@ class MyApp extends PolymerElement {
         :host {
           --app-primary-color: #4285f4;
           --app-secondary-color: black;
+          --primary-background-color: rgba(255, 255, 255, 0.8);
           --app-en-font: 'Montserrat', sans-serif;
           --app-ja-font: 'Noto Sans JP', sans-serif;
-
+          font-family: var(--app-ja-font);
           display: block;
         }
 
-        app-drawer-layout:not([narrow]) [drawer-toggle] {
-          display: none;
-        }
-
         app-header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 11;
+          background-color: var(--primary-background-color);
           --app-header-shadow: {
             box-shadow: none;
           };
-          background-color: var(--primary-background-color);
+        }
+
+        iron-pages {
+          padding-top: 6rem;
         }
 
         .memu-bar {
-          height: 72px;
+          height: 6rem;
+          animation-name: menuAnimation;
+          animation-duration: 0.7s;
+        }
+
+        @media (max-width: 767px) {
+          .memu-bar {
+            height: 4rem;
+          }
+        }
+
+        @keyframes menuAnimation {
+          0% {
+            opacity: 0;
+          }
+          30% {
+            opacity: 0;
+          }
+          130% {
+            opacity: 1;
+          }
         }
 
         .menu-list {
@@ -101,29 +123,22 @@ class MyApp extends PolymerElement {
       <app-route route="{{route}}" pattern="[[rootPath]]:page" data="{{routeData}}" tail="{{subroute}}">
       </app-route>
 
-      <app-drawer-layout fullbleed="" narrow="{{narrow}}">
-        <!-- Drawer content -->
-        <!-- Main content -->
-        <app-header-layout has-scrolling-region="">
+      <app-header condenses="" reveals="" effects="waterfall">
+        <app-toolbar class="memu-bar">
+          <iron-selector selected="[[page]]" attr-for-selected="name" class="menu-list" role="navigation">
+            <a name="top" href="[[rootPath]]"><span>TOP</span></a>
+            <a name="about" href="[[rootPath]]about"><span>ABOUT</span></a>
+            <a name="tips" href="[[rootPath]]tips"><span>TIPS</span></a>
+          </iron-selector>
+        </app-toolbar>
+      </app-header>
 
-          <app-header slot="header" condenses="" reveals="" effects="waterfall">
-            <app-toolbar class="memu-bar">
-              <iron-selector selected="[[page]]" attr-for-selected="name" class="menu-list" role="navigation">
-                <a name="view1" href="[[rootPath]]"><span>TOP</span></a>
-                <a name="view2" href="[[rootPath]]view2"><span>ABOUT</span></a>
-                <a name="view3" href="[[rootPath]]view3"><span>TIPS</span></a>
-              </iron-selector>
-            </app-toolbar>
-          </app-header>
-
-          <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
-            <my-view1 name="view1"></my-view1>
-            <my-view2 name="view2"></my-view2>
-            <my-view3 name="view3"></my-view3>
-            <my-view404 name="view404"></my-view404>
-          </iron-pages>
-        </app-header-layout>
-      </app-drawer-layout>
+      <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
+        <my-view1 name="top"></my-view1>
+        <my-view2 name="about"></my-view2>
+        <my-view3 name="tips"></my-view3>
+        <my-view404 name="view404"></my-view404>
+      </iron-pages>
     `;
   }
 
@@ -151,8 +166,8 @@ class MyApp extends PolymerElement {
      // If no page was found in the route data, page will be an empty string.
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
-      this.page = 'view1';
-    } else if (['view1', 'view2', 'view3'].indexOf(page) !== -1) {
+      this.page = 'top';
+    } else if (['top', 'about', 'tips'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -165,13 +180,13 @@ class MyApp extends PolymerElement {
     // Note: `polymer build` doesn't like string concatenation in the import
     // statement, so break it up.
     switch (page) {
-      case 'view1':
+      case 'top':
         import('./my-view1.js');
         break;
-      case 'view2':
+      case 'about':
         import('./my-view2.js');
         break;
-      case 'view3':
+      case 'tips':
         import('./my-view3.js');
         break;
       case 'view404':

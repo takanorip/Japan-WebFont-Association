@@ -11,28 +11,41 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '../../shared-styles.js';
 
-class Container extends PolymerElement {
+class Hero extends PolymerElement {
   static get template() {
     return html`
       <style include="shared-styles">
         :host {
-          display: block;
-          max-width: 1008px;
-          margin: auto;
-          padding: 0 24px;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 15rem;
+          position: relative;
         }
-        @media (max-width: 767px) {
-          :host {
-            padding: 0 16px;
-          }
+
+        :host::before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 4rem;
+          height: 2px;
+          background-color: var(--app-secondary-color)
+        }
+
+        h2 {
+          width: 100%;
+          text-align: left;
+          margin: auto;
+          font-size: 3rem;
+          font-family: var(--app-en-font);
         }
       </style>
 
-      <div>
-        <slot></slot>
-      </div>
+      <h2><slot></slot></h2>
     `;
   }
 }
 
-window.customElements.define('common-container', Container);
+window.customElements.define('common-hero', Hero);

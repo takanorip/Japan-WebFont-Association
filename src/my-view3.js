@@ -10,6 +10,8 @@
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import './shared-styles.js';
+import './components/common/container.js';
+import './components/common/hero.js';
 
 class MyView3 extends PolymerElement {
   static get template() {
@@ -17,18 +19,18 @@ class MyView3 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
-
-          padding: 10px;
         }
       </style>
 
-      <div class="card">
-        <div class="circle">3</div>
-        <h1>View Three</h1>
-        <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-        <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
-      </div>
+      <common-container>
+        <common-hero>TIPS</common-hero>
+        <p></p>
+        <p></p>
+      </common-container>
     `;
+  }
+  constructor() {
+    super();
   }
 }
 
