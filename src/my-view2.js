@@ -21,9 +21,25 @@ class MyView2 extends PolymerElement {
         :host {
           display: block;
           padding-bottom: 5rem;
+          animation-name: pageAnimation;
+          animation-duration: 0.7s;
         }
         .main {
-          margin-bottom: 4rem;
+          margin-bottom: 6rem;
+        }
+        @keyframes pageAnimation {
+          0% {
+            opacity: 0;
+            transform: translateX(-1rem);
+          }
+          30% {
+            opacity: 0;
+            transform: translateX(-1rem);
+          }
+          130% {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       </style>
 

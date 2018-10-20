@@ -19,7 +19,6 @@ class Hero extends PolymerElement {
           display: flex;
           align-items: center;
           width: 100%;
-          height: 15rem;
           position: relative;
         }
 
@@ -29,13 +28,14 @@ class Hero extends PolymerElement {
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 4rem;
+          width: 4.5rem;
           height: 2px;
           background-color: var(--app-secondary-color)
         }
 
         h2 {
           width: 100%;
+          padding: 6rem 0 3rem;
           text-align: left;
           margin: auto;
           font-size: 3rem;

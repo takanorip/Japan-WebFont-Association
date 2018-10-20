@@ -104,16 +104,27 @@ class MyApp extends PolymerElement {
           position: relative;
         }
 
-        .menu-list a.iron-selected span::after,
-        .menu-list a:hover span::after {
+        .menu-list a span::after {
           content: '';
           display: block;
+          width: 100%;
+          height: 2px;
+          background-color: #000;
           position: absolute;
           bottom: 0;
           left: 0;
-          right: 0;
-          height: 2px;
-          background-color: #111;
+          transform: scale(0, 1);
+          transform-origin: right top;
+          transition: transform .2s ease-out;
+        }
+
+        .menu-list a:hover span::after {
+          transform-origin: left top;
+          transform: scale(1, 1);
+        }
+
+        .menu-list a.iron-selected span::after {
+          transform: none;
         }
       </style>
 

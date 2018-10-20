@@ -19,6 +19,22 @@ class MyView3 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
+          animation-name: pageAnimation;
+          animation-duration: 0.7s;
+        }
+        @keyframes pageAnimation {
+          0% {
+            opacity: 0;
+            transform: translateX(-1rem);
+          }
+          30% {
+            opacity: 0;
+            transform: translateX(-1rem);
+          }
+          130% {
+            opacity: 1;
+            transform: translateX(0);
+          }
         }
       </style>
 
