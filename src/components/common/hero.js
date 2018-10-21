@@ -22,29 +22,27 @@ class Hero extends PolymerElement {
           position: relative;
         }
 
-        :host::before {
-          content: '';
-          display: block;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 4.5rem;
-          height: 2px;
-          background-color: var(--app-secondary-color)
-        }
-
         h2 {
           width: 100%;
-          padding: 6rem 0 3rem;
-          text-align: left;
-          margin: auto;
+          padding: 8rem 0 8rem;
+          text-align: center;
+          margin: 0 auto 5rem;
+          letter-spacing: 8px;
           font-size: 3rem;
           font-family: var(--app-en-font);
         }
       </style>
 
-      <h2><slot></slot></h2>
+      <h2 style="background-color: [[color]];"><slot></slot></h2>
     `;
+  }
+
+  static get properties() {
+    return {
+      color: {
+        type: String
+      },
+    };
   }
 }
 

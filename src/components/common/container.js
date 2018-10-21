@@ -17,7 +17,7 @@ class Container extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
-          max-width: 1008px;
+          max-width: 848px;
           margin: auto;
           padding: 0 24px;
         }

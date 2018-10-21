@@ -24,71 +24,31 @@ class MyView2 extends PolymerElement {
           animation-name: pageAnimation;
           animation-duration: 0.7s;
         }
-        .main {
-          margin-bottom: 6rem;
-        }
         @keyframes pageAnimation {
           0% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(1rem);
           }
           30% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(1rem);
           }
           130% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
         }
       </style>
 
       <common-container>
-        <common-hero class="main">ABOUT</common-hero>
+        <common-hero color="#aedefc">ABOUT</common-hero>
         <common-section>
           <span slot="title">このサイトについて</span>
           <p>ウェブフォントを普及するためのサイト</p>
           <p>ウェブフォントを普及するためのサイト</p>
         </common-section>
         <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-        </common-section>
-        <common-section>
-          <span slot="title">このサイトについて</span>
+          <span slot="title">メンバー</span>
           <p>ウェブフォントを普及するためのサイト</p>
         </common-section>
       </common-container>

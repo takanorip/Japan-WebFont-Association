@@ -39,6 +39,7 @@ class MyApp extends PolymerElement {
           --app-ja-font: 'Noto Sans JP', sans-serif;
           font-family: var(--app-ja-font);
           display: block;
+          height: 100%;
         }
 
         app-header {
@@ -54,6 +55,8 @@ class MyApp extends PolymerElement {
         }
 
         iron-pages {
+          height: 100%;
+          box-sizing: border-box;
           padding-top: 6rem;
         }
 
@@ -96,6 +99,7 @@ class MyApp extends PolymerElement {
           text-align: center;
           font-family: var(--app-en-font);
           font-weight: bold;
+          letter-spacing: 1px;
         }
 
         .menu-list a span {

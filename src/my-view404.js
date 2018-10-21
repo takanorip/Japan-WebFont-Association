@@ -15,11 +15,21 @@ class MyView404 extends PolymerElement {
     return html`
       <style>
         :host {
-          display: block;
-          height: 100%;
+          display: flex;
+          justify-content: center;
+          padding: 2rem 0 0;
+          text-align: center;
+          font-weight: 700;
+          font-size: 16rem;
+          font-family: var(--app-en-font);
+        }
+
+        p {
+          margin: 0;
+          letter-spacing: 8px;
         }
       </style>
-      404
+      <p>404</p>
     `;
   }
 }

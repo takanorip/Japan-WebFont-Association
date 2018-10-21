@@ -21,11 +21,6 @@ class MyView1 extends PolymerElement {
           padding: 10vh 0 15vh;
         }
 
-        .mainVisual {
-          width: 640px;
-          margin: auto;
-        }
-
         h1 {
           font-size: 6.5rem;
           text-align: left;
@@ -33,6 +28,7 @@ class MyView1 extends PolymerElement {
           font-family: var(--app-en-font);
           line-height: 1;
           overflow: hidden;
+          letter-spacing: 8px;
         }
 
         h1:nth-child(n+2) {

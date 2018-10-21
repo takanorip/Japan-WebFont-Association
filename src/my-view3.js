@@ -25,21 +25,21 @@ class MyView3 extends PolymerElement {
         @keyframes pageAnimation {
           0% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(1rem);
           }
           30% {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(1rem);
           }
           130% {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
           }
         }
       </style>
 
       <common-container>
-        <common-hero>TIPS</common-hero>
+        <common-hero color="#ffdfdf">TIPS</common-hero>
         <p></p>
         <p></p>
       </common-container>
