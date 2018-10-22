@@ -17,6 +17,7 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
+import '@polymer/iron-ajax/iron-ajax.js';
 import './components/common/footer.js'
 
 // Gesture events like tap and track generated from touch will not be
@@ -37,6 +38,7 @@ class MyApp extends PolymerElement {
           --primary-background-color: rgba(255, 255, 255, 0.8);
           --app-en-font: 'Montserrat', sans-serif;
           --app-ja-font: 'Noto Sans JP', sans-serif;
+          --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
           font-family: var(--app-ja-font);
           display: block;
           height: 100%;
@@ -66,12 +68,6 @@ class MyApp extends PolymerElement {
           animation-duration: 0.7s;
         }
 
-        @media (max-width: 767px) {
-          .memu-bar {
-            height: 4rem;
-          }
-        }
-
         @keyframes menuAnimation {
           0% {
             opacity: 0;
@@ -92,10 +88,10 @@ class MyApp extends PolymerElement {
 
         .menu-list a {
           display: block;
-          margin: 0 16px;
+          margin: 0 1rem;
           text-decoration: none;
           color: var(--app-secondary-color);
-          width: 160px;
+          width: 10rem;
           text-align: center;
           font-family: var(--app-en-font);
           font-weight: bold;
@@ -104,7 +100,7 @@ class MyApp extends PolymerElement {
 
         .menu-list a span {
           display: inline-block;
-          line-height: 48px;
+          line-height: 3rem;
           position: relative;
         }
 
@@ -130,7 +126,28 @@ class MyApp extends PolymerElement {
         .menu-list a.iron-selected span::after {
           transform: none;
         }
+
+        @media (max-width: 767px) {
+          .memu-bar {
+            height: 4rem;
+          }
+
+          .menu-list a span {
+            line-height: 2rem;
+          }
+
+          iron-pages {
+            padding-top: 4rem;
+          }
+        }
       </style>
+
+      <iron-ajax auto
+        url="https://jwfa-api-basic.now.sh/api"
+        handle-as="json"
+        loading="{{loading}}"
+        last-response="{{ajaxResponse}}">
+      </iron-ajax>
 
       <app-location route="{{route}}" url-space-regex="^[[rootPath]]">
       </app-location>
@@ -151,7 +168,7 @@ class MyApp extends PolymerElement {
       <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
         <my-view1 name="top"></my-view1>
         <my-view2 name="about"></my-view2>
-        <my-view3 name="tips"></my-view3>
+        <my-view3 name="tips" data="[[ajaxResponse]]" loading="[[loading]]"></my-view3>
         <my-view404 name="view404"></my-view404>
       </iron-pages>
     `;

@@ -22,6 +22,11 @@ class MyView404 extends PolymerElement {
           font-weight: 700;
           font-size: 16rem;
           font-family: var(--app-en-font);
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
         }
 
         p {

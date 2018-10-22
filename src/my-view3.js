@@ -9,6 +9,7 @@
  */
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/iron-ajax/iron-ajax.js';
 import './shared-styles.js';
 import './components/common/container.js';
 import './components/common/hero.js';
@@ -19,8 +20,53 @@ class MyView3 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
+          padding-bottom: 6rem;
           animation-name: pageAnimation;
           animation-duration: 0.7s;
+        }
+        a {
+          display: block;
+          transition: color 0.2s;
+          transition-timing-function: var(--ease-out-quart);
+        }
+        a:hover {
+          color: #fb929e;
+        }
+        h3 {
+          text-decoration: underline;
+        }
+        .detail {
+          display: flex;
+          align-items: flex-start;
+        }
+        .text {
+          margin-right: 2rem;
+          margin-bottom: 0;
+          flex: 1;
+        }
+        .image {
+          width: 200px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
+        .image::before {
+          content: '';
+          display: block;
+          width: 100%;
+          padding-bottom: calc(9 / 16 * 100%);
+        }
+        @media (max-width: 767px) {
+          .detail {
+            display: block;
+          }
+          .text {
+            margin-right: 0;
+            margin-bottom: 1rem;
+          }
+          .image {
+            width: 100%;
+          }
         }
         @keyframes pageAnimation {
           0% {
@@ -40,13 +86,41 @@ class MyView3 extends PolymerElement {
 
       <common-container>
         <common-hero color="#ffdfdf">TIPS</common-hero>
-        <p></p>
-        <p></p>
+        <div class="[[loadingClass]]">
+          <template is="dom-repeat" items="{{data}}">
+            <section>
+              <a href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
+                <h3>[[item.title]]</h3>
+                <div class="detail">
+                  <p class="text">[[item.seo.description]]</p>
+                  <p class="image" style="background-image: url([[item.ogp.og:image]]);"></p>
+                </div>
+              </a>
+            </section>
+          </template>
+          <div>
+          </div>
+        </div>
       </common-container>
     `;
   }
+  static get properties() {
+    return {
+      data: Array,
+      loading: {
+        type: String,
+        observer: '_handleLoading'
+      }
+    };
+  }
   constructor() {
     super();
+    this.loadingClass = 'loading'
+  }
+  _handleLoading(loading) {
+    if (!loading) {
+      this.loadingClass = 'loaded'
+    }
   }
 }
 

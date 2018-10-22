@@ -17,6 +17,23 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       * {
         box-sizing: border-box;
       }
+      h3 {
+        margin: 0 0 1rem;
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 14px;
+        margin: 0 0 0.5rem;
+        line-height: 1.8;
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+      a {
+        font-size: 14px;
+        color: #000;
+        text-decoration: none;
+      }
     </style>
   </template>
 </dom-module>`;

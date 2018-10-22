@@ -9,16 +9,12 @@ class Section extends PolymerElement {
           display: block;
           margin-bottom: 4rem;
         }
-        h3 {
-          margin: 0 0 2rem;
-          font-size: 1.5rem;
-          line-height: 1;
-        }
         ::slotted(p) {
           margin: 0;
+          font-size: 14px;
         }
-        ::slotted(p:not(:last-child)) {
-          margin-bottom: 1rem;
+        ::slotted(p:not(:last-of-type)) {
+          margin-bottom: 0.5rem;
         }
       </style>
 

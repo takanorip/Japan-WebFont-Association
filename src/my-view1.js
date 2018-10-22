@@ -17,8 +17,14 @@ class MyView1 extends PolymerElement {
     return html`
       <style include="shared-styles">
         :host {
-          display: block;
-          padding: 10vh 0 15vh;
+          display: flex;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          justify-content: center;
+          align-items: center;
         }
 
         h1 {
@@ -28,7 +34,7 @@ class MyView1 extends PolymerElement {
           font-family: var(--app-en-font);
           line-height: 1;
           overflow: hidden;
-          letter-spacing: 8px;
+          letter-spacing: 4px;
         }
 
         h1:nth-child(n+2) {
@@ -42,16 +48,13 @@ class MyView1 extends PolymerElement {
         }
 
         @media (max-width: 767px) {
-          .mainVisual {
-            width: auto;
-          }
-
           h1 {
-            font-size: 15vw;
+            font-size: 14vw;
+            letter-spacing: 2px;
           }
 
           h1:nth-child(n+2) {
-            margin-top: 3rem;
+            margin-top: 2rem;
           }
         }
 
