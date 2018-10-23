@@ -24,8 +24,10 @@ class MyView3 extends PolymerElement {
           animation-name: pageAnimation;
           animation-duration: 0.7s;
         }
-        section:not(:last-child) {
-          margin-bottom: 4rem;
+        section:not(:last-of-type) {
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid #ececec;
         }
         a {
           display: block;
@@ -36,39 +38,46 @@ class MyView3 extends PolymerElement {
           color: #fb929e;
         }
         h3 {
+          margin: 0 0 0.5rem;
           text-decoration: underline;
-        }
-        .detail {
-          display: flex;
-          align-items: flex-start;
+          font-size: 1rem;
+          font-weight: normal;
         }
         .text {
-          margin-right: 2rem;
           margin-bottom: 0;
           flex: 1;
         }
-        .image {
-          width: 200px;
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: left;
+        .wrapper {
+          position: relative;
         }
-        .image::before {
-          content: '';
+        .contents {
+          transition: all 0.3s;
+          transition-timing-function: var(--ease-out-quart);
+          transition-delay: 0.4s;
+          background-color: #fff;
+          opacity: 1;
+          visibility: visible;
+        }
+        .loading-content {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: -2;
+          display: none;
+        }
+        .loading .loading-content {
           display: block;
-          width: 100%;
-          padding-bottom: calc(9 / 16 * 100%);
+          z-index: 2;
+        }
+        .loading .contents {
+          opacity: 0;
+          visibility: hidden;
         }
         @media (max-width: 767px) {
-          .detail {
-            display: block;
-          }
           .text {
             margin-right: 0;
             margin-bottom: 1rem;
-          }
-          .image {
-            width: 100%;
           }
         }
         @keyframes pageAnimation {
@@ -89,18 +98,19 @@ class MyView3 extends PolymerElement {
 
       <common-container>
         <common-hero color="#ffdfdf">TIPS</common-hero>
-        <div class$="[[loadingClass]]">
-          <template is="dom-repeat" items="{{data}}">
-            <section>
-              <a href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
-                <h3>[[item.title]]</h3>
-                <div class="detail">
+        <div class$="[[loadingClass]] wrapper">
+          <div class="contents">
+            <template is="dom-repeat" items="{{data}}">
+              <section>
+                <a href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
+                  <h3>[[item.title]]</h3>
                   <p class="text">[[item.seo.description]]</p>
-                </div>
-              </a>
-            </section>
-          </template>
-          <div>
+                </a>
+              </section>
+            </template>
+          </div>
+          <div class="loading-content">
+            loading...
           </div>
         </div>
       </common-container>
