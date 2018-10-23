@@ -24,6 +24,9 @@ class MyView3 extends PolymerElement {
           animation-name: pageAnimation;
           animation-duration: 0.7s;
         }
+        section:not(:last-child) {
+          margin-bottom: 4rem;
+        }
         a {
           display: block;
           transition: color 0.2s;
@@ -47,8 +50,8 @@ class MyView3 extends PolymerElement {
         .image {
           width: 200px;
           background-repeat: no-repeat;
-          background-size: cover;
-          background-position: center;
+          background-size: contain;
+          background-position: left;
         }
         .image::before {
           content: '';
@@ -86,14 +89,13 @@ class MyView3 extends PolymerElement {
 
       <common-container>
         <common-hero color="#ffdfdf">TIPS</common-hero>
-        <div class="[[loadingClass]]">
+        <div class$="[[loadingClass]]">
           <template is="dom-repeat" items="{{data}}">
             <section>
               <a href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
                 <h3>[[item.title]]</h3>
                 <div class="detail">
                   <p class="text">[[item.seo.description]]</p>
-                  <p class="image" style="background-image: url([[item.ogp.og:image]]);"></p>
                 </div>
               </a>
             </section>
