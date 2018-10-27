@@ -17,11 +17,10 @@ class MyView404 extends PolymerElement {
         :host {
           display: flex;
           justify-content: center;
-          padding: 2rem 0 0;
+          align-items: center;
           text-align: center;
           font-weight: 700;
-          font-size: 16rem;
-          font-family: var(--app-en-font);
+          font-family: var(--app-en_hand-font);
           position: fixed;
           top: 0;
           bottom: 0;
@@ -29,12 +28,26 @@ class MyView404 extends PolymerElement {
           right: 0;
         }
 
-        p {
+        div {
+          margin: -4rem 0 0;
+        }
+
+        h2 {
           margin: 0;
+          font-size: 10rem;
+          line-height: 1;
           letter-spacing: 8px;
         }
+
+        p {
+          margin: 0;
+          font-size: 3rem;
+        }
       </style>
-      <p>404</p>
+      <div>
+        <h2>404</h2>
+        <p>Sorry...</p>
+      </div>
     `;
   }
 }

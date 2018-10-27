@@ -32,13 +32,14 @@ class MyView1 extends PolymerElement {
           text-align: left;
           margin: 0;
           font-family: var(--app-en-font);
-          line-height: 1;
+          font-weight: 900;
+          line-height: 1.2;
           overflow: hidden;
           letter-spacing: 4px;
         }
 
         h1:nth-child(n+2) {
-          margin-top: 3rem;
+          margin-top: 1.5rem;
         }
 
         h1 span {

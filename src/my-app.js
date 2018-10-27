@@ -37,6 +37,7 @@ class MyApp extends PolymerElement {
           --app-secondary-color: black;
           --primary-background-color: rgba(255, 255, 255, 0.8);
           --app-en-font: 'Montserrat', sans-serif;
+          --app-en_hand-font: 'Pacifico', sans-serif;
           --app-ja-font: 'Noto Sans JP', sans-serif;
           --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
           font-family: var(--app-ja-font);
