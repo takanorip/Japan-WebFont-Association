@@ -24,6 +24,16 @@ class MyView2 extends PolymerElement {
           animation-name: pageAnimation;
           animation-duration: 0.7s;
         }
+        .name {
+          font-size: 18px;
+        }
+        a {
+          display: block;
+          text-decoration: underline;
+        }
+        a:hover {
+          color: #aedefc;
+        }
         @keyframes pageAnimation {
           0% {
             opacity: 0;
@@ -43,13 +53,37 @@ class MyView2 extends PolymerElement {
       <common-container>
         <common-hero color="#aedefc">ABOUT</common-hero>
         <common-section>
+          <span slot="title">ウェブフォントで「ウェブ」をもっと楽しく</span>
+          <p>このサイトはウェブフォントを普及するためのサイトです。</p>
+        </common-section>
+        <common-section>
           <span slot="title">このサイトについて</span>
-          <p>ウェブフォントを普及するためのサイト</p>
-          <p>ウェブフォントを普及するためのサイト</p>
+          <p>このサイトにウェブフォントに関する有益な情報を集約し、ウェブフォントへの正しい理解を広めることが目的です。</p>
+          <p>注）「Japan Web Font Association」および「日本ウェブフォント協会」という団体は実在しない架空の団体です。</p>
+        </common-section>
+        <common-section>
+          <span slot="title">VISION</span>
+          <p>日本ウェブフォント協会のビジョン</p>
+          <ul>
+            <li>ウェブフォントへの正しい理解を広める</li>
+          </ul>
+        </common-section>
+        <common-section>
+          <span slot="title">公式教材</span>
+          <p>
+            タイトル：誰でも使える！ウェブフォント実践マニュアル<br>
+            著者：大木尊紀
+          </p>
         </common-section>
         <common-section>
           <span slot="title">メンバー</span>
-          <p>ウェブフォントを普及するためのサイト</p>
+          <div class="card">
+            <figure><img src="/images/about/takanorip.jpg"></figure>
+            <div class="texts">
+              <p><a href="https://twitter.com/takanoripe"><b class="name">takanorip</b></a></p>
+              <p>フォントが好き。「誰でも使える！ウェブフォント実践マニュアル」著者。</p>
+            </div>
+          </div>
         </common-section>
       </common-container>
     `;

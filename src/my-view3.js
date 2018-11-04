@@ -31,11 +31,9 @@ class MyView3 extends PolymerElement {
         }
         a {
           display: block;
-          transition: color 0.2s;
-          transition-timing-function: var(--ease-out-quart);
         }
         a:hover {
-          color: #fb929e;
+          color: #ffdfdf;
         }
         h3 {
           margin: 0 0 0.5rem;

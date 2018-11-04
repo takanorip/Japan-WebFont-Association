@@ -9,13 +9,6 @@ class Section extends PolymerElement {
           display: block;
           margin-bottom: 4rem;
         }
-        ::slotted(p) {
-          margin: 0;
-          font-size: 14px;
-        }
-        ::slotted(p:not(:last-of-type)) {
-          margin-bottom: 0.5rem;
-        }
       </style>
 
       <section>

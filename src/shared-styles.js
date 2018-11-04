@@ -23,13 +23,23 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       }
       p {
         font-size: 14px;
-        margin: 0 0 0.5rem;
+        margin: 0.5rem 0 0;
         line-height: 1.8;
       }
-      p:last-of-type {
+      p:first-child {
+        margin-bottom: 0;
+      }
+      ul {
+        font-size: 14px;
+        margin: 0.5rem 0 0;
+        line-height: 1.8;
+      }
+      ul:first-child {
         margin-bottom: 0;
       }
       a {
+        transition: color 0.2s;
+        transition-timing-function: var(--ease-out-quart);
         font-size: 14px;
         color: #000;
         text-decoration: none;
