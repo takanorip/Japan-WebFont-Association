@@ -24,37 +24,57 @@ class MyView3 extends PolymerElement {
           animation-name: pageAnimation;
           animation-duration: 0.7s;
         }
-        section:not(:last-of-type) {
-          margin-bottom: 1.5rem;
-          padding-bottom: 1.5rem;
-          border-bottom: 1px solid #ececec;
-        }
         a {
           display: block;
         }
-        a:hover {
-          color: #ffdfdf;
-        }
         h3 {
-          margin: 0 0 0.5rem;
-          text-decoration: underline;
+          margin: 0;
           font-size: 1rem;
-          font-weight: normal;
         }
         .text {
           margin-bottom: 0;
+          margin-top: 1rem;
           flex: 1;
         }
         .wrapper {
           position: relative;
         }
         .contents {
+          margin-top: -12px;
           transition: all 0.3s;
           transition-timing-function: var(--ease-out-quart);
           transition-delay: 0.4s;
           background-color: #fff;
           opacity: 1;
           visibility: visible;
+          column-count: 3;
+          column-gap: 24px;
+        }
+        .document {
+          /* margin-bottom: 24px; */
+          transition: 0.3s;
+          border-radius: 4px;
+          /* border: 1px solid #bbb; */
+          page-break-inside: avoid;
+          break-inside: avoid;
+          overflow: hidden;
+          box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+        }
+        .document:hover {
+          box-shadow: 0px 12px 24px rgba(0,0,0,0.4);
+        }
+        .documentWrap {
+          margin-bottom: -18px;
+          padding: 12px 0 30px;
+        }
+        .img {
+          padding-bottom: calc(9 / 16 * 100%);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        .textArea {
+          padding: 2rem 1rem;
         }
         .loading-content {
           position: absolute;
@@ -73,9 +93,8 @@ class MyView3 extends PolymerElement {
           visibility: hidden;
         }
         @media (max-width: 767px) {
-          .text {
-            margin-right: 0;
-            margin-bottom: 1rem;
+          .contents {
+            column-count: 1;
           }
         }
         @keyframes pageAnimation {
@@ -99,12 +118,17 @@ class MyView3 extends PolymerElement {
         <div class$="[[loadingClass]] wrapper">
           <div class="contents">
             <template is="dom-repeat" items="{{data}}">
-              <section>
-                <a href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
-                  <h3>[[item.title]]</h3>
-                  <p class="text">[[item.seo.description]]</p>
+              <div class="documentWrap">
+                <a class="document" href="[[item.ogp.og:url]]" target="_blank" rel="noopener noreferrer">
+                  <section>
+                    <div class="img" style="background-image: url([[item.ogp.og:image]]);"></div>
+                    <div class="textArea">
+                      <h3>[[item.title]]</h3>
+                      <p class="text">[[item.seo.description]]</p>
+                    </div>
+                  </section>
                 </a>
-              </section>
+              </div>
             </template>
           </div>
           <div class="loading-content">

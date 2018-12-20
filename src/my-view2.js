@@ -34,6 +34,19 @@ class MyView2 extends PolymerElement {
         a:hover {
           color: #aedefc;
         }
+        .card {
+          display: flex;
+        }
+        .image {
+          width: 120px;
+          margin: 0 1rem 0 0;
+          line-height: 0;
+          overflow: hidden;
+          border-radius: 4px;
+        }
+        .image img {
+          width: 100%;
+        }
         @keyframes pageAnimation {
           0% {
             opacity: 0;
@@ -78,7 +91,7 @@ class MyView2 extends PolymerElement {
         <common-section>
           <span slot="title">メンバー</span>
           <div class="card">
-            <figure><img src="/images/about/takanorip.jpg"></figure>
+            <figure class="image"><img src="/images/about/takanorip.jpg"></figure>
             <div class="texts">
               <p><a href="https://twitter.com/takanoripe"><b class="name">takanorip</b></a></p>
               <p>フォントが好き。「誰でも使える！ウェブフォント実践マニュアル」著者。</p>
