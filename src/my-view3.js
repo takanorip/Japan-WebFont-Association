@@ -28,19 +28,23 @@ class MyView3 extends PolymerElement {
           display: block;
         }
         h3 {
+          max-height: 3rem;
           margin: 0;
           font-size: 1rem;
+          overflow: hidden;
         }
         .text {
+          max-height: 100px;
           margin-bottom: 0;
           margin-top: 1rem;
           flex: 1;
+          overflow: hidden;
         }
         .wrapper {
           position: relative;
         }
         .contents {
-          margin-top: -12px;
+          margin-top: -1rem;
           transition: all 0.3s;
           transition-timing-function: var(--ease-out-quart);
           transition-delay: 0.4s;
@@ -48,13 +52,11 @@ class MyView3 extends PolymerElement {
           opacity: 1;
           visibility: visible;
           column-count: 3;
-          column-gap: 24px;
+          column-gap: 32px;
         }
         .document {
-          /* margin-bottom: 24px; */
           transition: 0.3s;
           border-radius: 4px;
-          /* border: 1px solid #bbb; */
           page-break-inside: avoid;
           break-inside: avoid;
           overflow: hidden;
@@ -64,8 +66,9 @@ class MyView3 extends PolymerElement {
           box-shadow: 0px 12px 24px rgba(0,0,0,0.4);
         }
         .documentWrap {
-          margin-bottom: -18px;
-          padding: 12px 0 30px;
+          padding: 1rem 0;
+          page-break-inside: avoid;
+          break-inside: avoid;
         }
         .img {
           padding-bottom: calc(9 / 16 * 100%);
@@ -74,7 +77,7 @@ class MyView3 extends PolymerElement {
           background-size: cover;
         }
         .textArea {
-          padding: 2rem 1rem;
+          padding: 1.5rem;
         }
         .loading-content {
           position: absolute;
