@@ -17,6 +17,10 @@ module.exports = {
     {
       urlPattern: /\/@webcomponents\/webcomponentsjs\//,
       handler: 'fastest'
+    },
+    {
+      urlPattern: /^https:\/\/jwfa-api-basic\.now\.sh\/api/,
+      handler: 'networkFirst'
     }
   ]
 };

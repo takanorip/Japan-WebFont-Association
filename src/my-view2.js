@@ -36,7 +36,7 @@ class MyView2 extends PolymerElement {
         }
         .cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
           grid-gap: 2rem;
         }
         .card {
@@ -128,6 +128,20 @@ class MyView2 extends PolymerElement {
               <div class="texts">
                 <a href="https://twitter.com/murokaco"><b class="name">murokaco</b></a>
                 <p>好きなフォント: はんなり明朝</p>
+              </div>
+            </div>
+            <div class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/849621148266405888/3N-oRzJ8_400x400.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/Febu7th"><b class="name">如月ななひ</b></a>
+                <p>主食は文字とカメラ。マクロ撮影が好き。駆け出しwebデザイナー。</p>
+              </div>
+            </div>
+            <div class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1049722475917979648/QfBeL_g7_400x400.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/shuhannn"><b class="name">shuhannn</b></a>
+                <p></p>
               </div>
             </div>
           </div>
