@@ -60,10 +60,10 @@ class MyView3 extends PolymerElement {
           page-break-inside: avoid;
           break-inside: avoid;
           overflow: hidden;
-          box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+          box-shadow: 0px 3px 15px rgba(0,0,0,0.08);
         }
         .document:hover {
-          box-shadow: 0px 12px 24px rgba(0,0,0,0.4);
+          box-shadow: 0px 12px 24px rgba(0,0,0,0.2);
         }
         .documentWrap {
           padding: 1rem 0;

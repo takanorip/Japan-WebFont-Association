@@ -9,6 +9,22 @@ class Section extends PolymerElement {
           display: block;
           margin-bottom: 4rem;
         }
+        h3 {
+          font-size: 24px;
+          padding-bottom: 1rem;
+          margin-bottom: 2rem;
+          position: relative;
+        }
+        h3::after {
+          content: '';
+          display: block;
+          height: 2px;
+          width: 2rem;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: #333;
+        }
       </style>
 
       <section>

@@ -34,18 +34,36 @@ class MyView2 extends PolymerElement {
         a:hover {
           color: #aedefc;
         }
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(216px, 1fr));
+          grid-gap: 2rem;
+        }
         .card {
-          display: flex;
+          border-radius: 4px;
+          padding: 2rem;
+          box-shadow: 0px 3px 15px rgba(0,0,0,0.08);
         }
         .image {
-          width: 120px;
-          margin: 0 1rem 0 0;
+          width: 96px;
+          margin: 0 auto 1.5rem;
           line-height: 0;
           overflow: hidden;
-          border-radius: 4px;
+          border-radius: 50%;
         }
         .image img {
           width: 100%;
+        }
+        .texts {
+          flex: 1;
+        }
+        common-section:last-child {
+          margin: 0;
+        }
+        @media (max-width: 767px) {
+          .cards {
+            justify-content: center;
+          }
         }
         @keyframes pageAnimation {
           0% {
@@ -90,11 +108,27 @@ class MyView2 extends PolymerElement {
         </common-section>
         <common-section>
           <span slot="title">メンバー</span>
-          <div class="card">
-            <figure class="image"><img src="/images/about/takanorip.jpg"></figure>
-            <div class="texts">
-              <p><a href="https://twitter.com/takanoripe"><b class="name">takanorip</b></a></p>
-              <p>フォントが好き。「誰でも使える！ウェブフォント実践マニュアル」著者。</p>
+          <div class="cards">
+            <div class="card">
+              <figure class="image"><img src="/images/about/takanorip.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/takanoripe"><b class="name">takanorip</b></a>
+                <p>フォントが好き。「誰でも使える！ウェブフォント実践マニュアル」著者。</p>
+              </div>
+            </div>
+            <div class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1077406283932659712/4YDe9oUj_400x400.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/calmeryme"><b class="name">Calmery</b></a>
+                <p>田舎の大学生．JavaScript，Elm とか好き．</p>
+              </div>
+            </div>
+            <div class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1013764005565947905/QrDs975v_400x400.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/murokaco"><b class="name">murokaco</b></a>
+                <p>好きなフォント: はんなり明朝</p>
+              </div>
             </div>
           </div>
         </common-section>
