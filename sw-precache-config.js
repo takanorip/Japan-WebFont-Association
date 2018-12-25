@@ -20,7 +20,7 @@ module.exports = {
     },
     {
       urlPattern: /^https:\/\/jwfa-api-basic\.now\.sh\/api/,
-      handler: 'networkFirst'
+      handler: 'cacheFirst'
     }
   ]
 };
