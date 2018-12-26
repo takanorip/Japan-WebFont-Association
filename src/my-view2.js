@@ -144,6 +144,20 @@ class MyView2 extends PolymerElement {
                 <p></p>
               </div>
             </div>
+            <div class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/940479838854377473/_Exr3_lx_400x400.jpg"></figure>
+              <div class="texts">
+                <a href="https://twitter.com/moro_is"><b class="name">モロ</b></a>
+                <p>フリーランスなデザイナーです。最近はメダカと錦鯉と仮想通貨が好きです。</p>
+              </div>
+            </div>
+            <div class="card">
+              <figure class="image"><img src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/13631654_879887108807235_2829615063363236677_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=5b2d091e58f5fd61da611a85e335c820&oe=5C989E76"></figure>
+              <div class="texts">
+                <a href="https://www.facebook.com/atsushi.ito.7758"><b class="name">Atsushi Ito</b></a>
+                <p></p>
+              </div>
+            </div>
           </div>
         </common-section>
       </common-container>
