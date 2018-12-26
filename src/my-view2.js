@@ -36,12 +36,12 @@ class MyView2 extends PolymerElement {
         }
         .cards {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           grid-gap: 2rem;
         }
         .card {
           border-radius: 4px;
-          padding: 2rem;
+          padding: 2rem 0;
           box-shadow: 0px 3px 15px rgba(0,0,0,0.08);
         }
         .image {
