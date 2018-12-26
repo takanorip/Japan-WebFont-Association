@@ -13,7 +13,6 @@ import './shared-styles.js';
 import './components/common/container.js';
 import './components/common/hero.js';
 import './components/common/section.js';
-
 class MyView2 extends PolymerElement {
   static get template() {
     return html`
@@ -25,18 +24,19 @@ class MyView2 extends PolymerElement {
           animation-duration: 0.7s;
         }
         .name {
-          font-size: 18px;
+          font-size: 14px;
         }
         a {
           display: block;
           text-decoration: underline;
+          text-align: center;
         }
         a:hover {
           color: #aedefc;
         }
         .cards {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
           grid-gap: 2rem;
         }
         .card {
@@ -45,7 +45,7 @@ class MyView2 extends PolymerElement {
           box-shadow: 0px 3px 15px rgba(0,0,0,0.08);
         }
         .image {
-          width: 96px;
+          width: 64px;
           margin: 0 auto 1.5rem;
           line-height: 0;
           overflow: hidden;
@@ -62,7 +62,7 @@ class MyView2 extends PolymerElement {
         }
         @media (max-width: 767px) {
           .cards {
-            justify-content: center;
+            grid-gap: 1rem;
           }
         }
         @keyframes pageAnimation {
@@ -102,62 +102,73 @@ class MyView2 extends PolymerElement {
         <common-section>
           <span slot="title">公式教材</span>
           <p>
-            タイトル：誰でも使える！ウェブフォント実践マニュアル<br>
+            タイトル：<br>
             著者：大木尊紀
           </p>
         </common-section>
         <common-section>
           <span slot="title">メンバー</span>
           <div class="cards">
-            <div class="card">
+            <a href="https://twitter.com/takanoripe" class="card">
               <figure class="image"><img src="/images/about/takanorip.jpg"></figure>
               <div class="texts">
-                <a href="https://twitter.com/takanoripe"><b class="name">takanorip</b></a>
-                <p>フォントが好き。「誰でも使える！ウェブフォント実践マニュアル」著者。</p>
+                <b class="name">takanorip</b>
               </div>
-            </div>
-            <div class="card">
+            </a>
+            <a href="https://twitter.com/calmeryme" class="card">
               <figure class="image"><img src="https://pbs.twimg.com/profile_images/1077406283932659712/4YDe9oUj_400x400.jpg"></figure>
               <div class="texts">
-                <a href="https://twitter.com/calmeryme"><b class="name">Calmery</b></a>
-                <p>田舎の大学生．JavaScript，Elm とか好き．</p>
+                <b class="name">Calmery</b>
               </div>
-            </div>
-            <div class="card">
+            </a>
+            <a href="https://twitter.com/murokaco" class="card">
               <figure class="image"><img src="https://pbs.twimg.com/profile_images/1013764005565947905/QrDs975v_400x400.jpg"></figure>
               <div class="texts">
-                <a href="https://twitter.com/murokaco"><b class="name">murokaco</b></a>
-                <p>好きなフォント: はんなり明朝</p>
+                <b class="name">murokaco</b>
               </div>
-            </div>
-            <div class="card">
+            </a>
+            <a href="https://twitter.com/Febu7th" class="card">
               <figure class="image"><img src="https://pbs.twimg.com/profile_images/849621148266405888/3N-oRzJ8_400x400.jpg"></figure>
               <div class="texts">
-                <a href="https://twitter.com/Febu7th"><b class="name">如月ななひ</b></a>
-                <p>主食は文字とカメラ。マクロ撮影が好き。駆け出しwebデザイナー。</p>
+                <b class="name">如月ななひ</b>
               </div>
-            </div>
-            <div class="card">
+            </a>
+            <a href="https://twitter.com/shuhannn" class="card">
               <figure class="image"><img src="https://pbs.twimg.com/profile_images/1049722475917979648/QfBeL_g7_400x400.jpg"></figure>
               <div class="texts">
-                <a href="https://twitter.com/shuhannn"><b class="name">shuhannn</b></a>
-                <p></p>
+                <b class="name">shuhannn</b>
               </div>
-            </div>
-            <div class="card">
-              <figure class="image"><img src="https://pbs.twimg.com/profile_images/940479838854377473/_Exr3_lx_400x400.jpg"></figure>
-              <div class="texts">
-                <a href="https://twitter.com/moro_is"><b class="name">モロ</b></a>
-                <p>フリーランスなデザイナーです。最近はメダカと錦鯉と仮想通貨が好きです。</p>
-              </div>
-            </div>
-            <div class="card">
+            </a>
+            <a href="https://www.facebook.com/atsushi.ito.7758" class="card">
               <figure class="image"><img src="https://scontent-nrt1-1.xx.fbcdn.net/v/t1.0-9/13631654_879887108807235_2829615063363236677_n.jpg?_nc_cat=101&_nc_ht=scontent-nrt1-1.xx&oh=5b2d091e58f5fd61da611a85e335c820&oe=5C989E76"></figure>
               <div class="texts">
-                <a href="https://www.facebook.com/atsushi.ito.7758"><b class="name">Atsushi Ito</b></a>
-                <p></p>
+                <b class="name">Atsushi Ito</b>
               </div>
-            </div>
+            </a>
+            <a href="https://twitter.com/moro_is" class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/940479838854377473/_Exr3_lx_400x400.jpg"></figure>
+              <div class="texts">
+                <b class="name">モロ</b>
+              </div>
+            </a>
+            <a href="https://twitter.com/tscp" class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1496340861/3343181_origin_400x400.jpg"></figure>
+              <div class="texts">
+                <b class="name">OYA takashi</b>
+              </div>
+            </a>
+            <a href="https://twitter.com/omelettelife" class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1075431837588086789/ot6cssVM_400x400.jpg"></figure>
+              <div class="texts">
+                <b class="name">オムライフ</b>
+              </div>
+            </a>
+            <a href="https://twitter.com/DesignTechLab1" class="card">
+              <figure class="image"><img src="https://pbs.twimg.com/profile_images/1067810155557834752/GtGrrtQl_400x400.jpg"></figure>
+              <div class="texts">
+                <b class="name">DesignTechLab</b>
+              </div>
+            </a>
           </div>
         </common-section>
       </common-container>
