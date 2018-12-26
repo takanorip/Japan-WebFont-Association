@@ -36,7 +36,7 @@ class MyView2 extends PolymerElement {
         }
         .cards {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(166px, 1fr));
           grid-gap: 2rem;
         }
         .card {
@@ -63,6 +63,7 @@ class MyView2 extends PolymerElement {
         @media (max-width: 767px) {
           .cards {
             grid-gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
           }
         }
         @keyframes pageAnimation {
